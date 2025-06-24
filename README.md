@@ -1,3 +1,7 @@
+## Demonstração
+
+![Login Angular](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angular.gif?raw=true)
+
 ## Node.js Authentication API
 
 API de autenticação com JWT, MongoDB e validação Zod.
@@ -16,6 +20,3 @@ API de autenticação com JWT, MongoDB e validação Zod.
 ```bash
 npm install
 
-## Demonstração
-
-![Login Angular](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angular.gif?raw=true)
