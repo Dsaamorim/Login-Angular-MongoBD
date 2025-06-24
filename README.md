@@ -12,3 +12,5 @@ API de autenticação com JWT, MongoDB e validação Zod.
 1. Instale as dependências:
 ```bash
 npm install
+
+<img src="/Login-Angular.gif">
