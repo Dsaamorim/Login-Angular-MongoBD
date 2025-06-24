@@ -13,4 +13,4 @@ API de autenticação com JWT, MongoDB e validação Zod.
 ```bash
 npm install
 
-<img src="Login-Angular-MongoBD/Login-Angular.gif.gif" alt="Descrição do GIF">
+![Login-Angular](https://github.com/user-attachments/assets/48ff7841-7fe9-43c6-bb47-170ffc4ea744)
