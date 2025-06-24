@@ -13,5 +13,6 @@ API de autenticação com JWT, MongoDB e validação Zod.
 ```bash
 npm install
 
-![Login-Angular](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angular.gif?raw=true)
-![Flask-Login](https://github.com/Dsaamorim/Flask-Login/blob/main/Flask-Login.gif)
+![Demonstração do Login](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angular.gif?raw=true)
+
+Este projeto demonstra um sistema de login completo usando Angular no frontend e MongoDB no backend.
