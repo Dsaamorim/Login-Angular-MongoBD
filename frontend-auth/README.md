@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FrontendAuth
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
@@ -57,3 +58,27 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+## Demonstração
+
+![Login Angular](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angular.gif?raw=true)
+
+## Node.js Authentication API
+
+API de autenticação com JWT, MongoDB e validação Zod.
+
+## Features
+
+- Login/logout com tokens JWT
+- Validação de dados com Zod
+- Middleware de autenticação
+- Blacklist de tokens (em memória/MongoDB)
+
+## Configuração
+
+1. Instale as dependências:
+
+```bash
+npm install
+
+>>>>>>> 3ea66694c5b523c06efc59988d6a7397d94aab55
