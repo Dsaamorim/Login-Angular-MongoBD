@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
@@ -40,3 +41,26 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+=======
+# Dependências
+node_modules/
+
+# Ambiente
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Testes
+coverage/
+>>>>>>> 3ea66694c5b523c06efc59988d6a7397d94aab55
