@@ -41,7 +41,7 @@ Este repositório demonstra uma configuração **essencial** para um fluxo de au
 
 ## Estrutura de Pastas
 
-```text
+```text```
 src/
  └─ app/
     ├─ app.routes.ts
@@ -55,3 +55,37 @@ src/
     │   └─ register.component.ts
     └─ profile/
         └─ profile.component.ts
+
+Caminho	Componente	Proteção
+/ ou /login	LoginComponent	—
+/register	RegisterComponent	—
+/profile	ProfileComponent	authGuard
+** (inválida)	Redireciona → /login	—
+
+A definição existe tanto em standalone routes (app.routes.ts) quanto em AppRoutingModule tradicional, permitindo comparar estilos.
+
+Principais Recursos do Login
+SubmitErrorStateMatcher → erros visíveis após submit.
+
+Alternância de visibilidade da senha.
+
+Remember e-mail salvo em localStorage.
+
+Indicador de carregamento (MatProgressSpinner).
+
+Feedback de sucesso/erro via MatSnackBar.
+
+Tecnologias Utilizadas
+Angular 17+ com Standalone Components
+
+Angular Router com Lazy Loading
+
+Angular Reactive Forms
+
+Angular Material
+
+RxJS para manipulação de streams
+
+TypeScript
+
+HTML5 & SCSS
