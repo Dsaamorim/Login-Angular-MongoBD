@@ -41,7 +41,7 @@ Este repositório demonstra uma configuração **essencial** para um fluxo de au
 
 ## Estrutura de Pastas
 
-```text```
+```text
 src/
  └─ app/
     ├─ app.routes.ts
@@ -54,7 +54,7 @@ src/
     ├─ register/
     │   └─ register.component.ts
     └─ profile/
-        └─ profile.component.ts
+        └─ profile.component.ts```
 
 Caminho	Componente	Proteção
 / ou /login	LoginComponent	—
