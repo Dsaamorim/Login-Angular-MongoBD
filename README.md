@@ -55,6 +55,7 @@ src/
     │   └─ register.component.ts
     └─ profile/
         └─ profile.component.ts
+```
 
 Caminho	Componente	Proteção
 / ou /login	LoginComponent	—
