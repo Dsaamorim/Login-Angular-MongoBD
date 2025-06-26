@@ -22,7 +22,7 @@ API de autenticação com JWT, MongoDB e validação Zod.
 ```bash
 npm install
 
-# Angular Auth App — Configuração Mínima
+## Angular Auth App — Configuração Mínima
 
 Este repositório demonstra uma configuração **essencial** para um fluxo de autenticação completo em Angular — com lazy loading, guards e UI em Angular Material.
 
