@@ -1,0 +1,139 @@
+/* -------------- PALHETA --------------- */
+$gradient-start: #5b8def;   /* azul */
+$gradient-end:   #2fd8fd;   /* ciano */
+$bg-blur:        rgba(255,255,255,.15);
+$card-bg:        rgba(255,255,255,.75);
+$card-border:    rgba(255,255,255,.3);
+$text-main:      #0d1b3a;
+
+/* -------------- BASE -------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+:host {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(91,141,239,.4) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(47,216,253,.35) 0%, transparent 60%),
+    linear-gradient(135deg, #181d3f 0%, #0c1433 100%);
+  overflow: hidden;
+}
+
+/* -------------- CARD -------------- */
+.login-card {
+  width: 600%;
+  padding: 40px 48px;
+  max-width: 420px;
+  border-radius: 20px;
+  background: $card-bg;
+  backdrop-filter: blur(16px);
+  border: 1px solid $card-border;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  color: $text-main;
+}
+
+/* cabeçalho fino com gradiente */
+mat-card-header {
+  padding: 0;
+  mat-card-title {
+    padding: 18px 24px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg,$gradient-start,$gradient-end);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+}
+
+/* -------------- FORM -------------- */
+.login-form { display: flex; flex-direction: column; gap: 20px; }
+.full-width  { width: 100%; }
+
+mat-form-field.full-width {
+  --mdc-outlined-text-field-container-shape: 12px;
+  --mdc-outlined-text-field-outline-color: rgba(13,27,58,.25);
+  --mdc-outlined-text-field-hover-outline-color: $gradient-start;
+  --mdc-outlined-text-field-focus-outline-color: $gradient-start;
+  --mdc-outlined-text-field-leading-space: 16px;
+  --mdc-outlined-text-field-trailing-space: 40px; /* espaço p/ icon */
+}
+
+/* rótulo azul quando ativo */
+.mat-mdc-text-field-wrapper.mdc-text-field--focused .mdc-floating-label {
+  color: $gradient-start !important;
+}
+
+/* ícone (olho) */
+mat-icon {
+  color: rgba(13,27,58,.6);
+  transition: color .3s;
+}
+button[mat-icon-button]:hover mat-icon { color: $gradient-start; }
+
+/* checkbox */
+.remember-email {
+  margin-top: -8px;
+  .mdc-form-field>label { color: $text-main; }
+}
+
+/* -------------- BOTÃO -------------- */
+.login-button {
+  height: 46px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  border-radius: 30px;
+  background: linear-gradient(90deg,$gradient-start,$gradient-end);
+  color: #fff;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 14px rgba(91,141,239,.4);
+
+  &:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(91,141,239,.55); }
+  &:active { transform: translateY(0); }
+}
+
+/* -------------- LINK REGISTRO -------------- */
+.register-link {
+  margin-top: 18px;
+  text-align: center;
+  a {
+    color: $gradient-start;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0; height: 2px; width: 100%;
+      background: $gradient-start; transform: scaleX(0);
+      transition: transform .3s ease; transform-origin: right;
+    }
+    &:hover:after { transform: scaleX(1); transform-origin: left; }
+  }
+}
+
+/* -------------- SNACKBAR COLORS -------------- */
+.success-snackbar {
+  --mdc-snackbar-container-color: #2e7d32;
+  --mdc-snackbar-supporting-text-color: #fff;
+}
+.error-snackbar {
+  --mdc-snackbar-container-color: #c62828;
+  --mdc-snackbar-supporting-text-color: #fff;
+}
+
+/* -------------- HIDE native password eye -------------- */
+input[type='password']::-ms-reveal,
+input[type='password']::-ms-clear { display: none; }
+input[type='password']::-webkit-password-toggle-button,
+input[type='password']::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+}
+
+.login-header {
+  margin-bottom: 28px;     /* distancia a faixa do 1º campo */
+}
