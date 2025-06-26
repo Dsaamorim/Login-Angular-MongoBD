@@ -22,20 +22,26 @@ API de autenticação com JWT, MongoDB e validação Zod.
 ```bash
 npm install
 
-Este repositório demonstra a configuração mínima de um fluxo de autenticação completo em Angular:
+# Angular Auth App — Configuração Mínima
 
-Rotas declaradas em src/app/app.routes.ts com carregamento preguiçoso (loadComponent) e redirecionamentos seguros.
+Este repositório demonstra uma configuração **essencial** para um fluxo de autenticação completo em Angular — com lazy loading, guards e UI em Angular Material.
 
-Login / Registro / Perfil implementados como components independentes.
+---
 
-Auth Guard protegendo a rota /profile.
+## Visão Geral
 
-Reactive Forms com validações e feedback visual amigável.
+- **Rotas** declaradas em `src/app/app.routes.ts` com `loadComponent` e redirecionamentos seguros.  
+- **Login / Registro / Perfil** como componentes independentes.  
+- **Auth Guard** protegendo a rota `/profile`.  
+- **Reactive Forms** com validações e feedback visual amigável.  
+- **LocalStorage** opcional para lembrar o e-mail do usuário.  
+- **UI** estilizada com Angular Material.  
 
-LocalStorage para lembrar o e‑mail do usuário opcionalmente.
+---
 
-UI baseada em Angular Material.
+## Estrutura de Pastas
 
+```text
 src/
  └─ app/
     ├─ app.routes.ts
@@ -49,47 +55,3 @@ src/
     │   └─ register.component.ts
     └─ profile/
         └─ profile.component.ts
-
-/ → lazy‑load LoginComponent.
-
-/login → LoginComponent.
-
-/register → RegisterComponent.
-
-/profile → ProfileComponent (precisa estar autenticado – authGuard).
-
-Qualquer rota inválida redireciona para /login.
-
-A definição aparece tanto no formato de routes standalone (app.routes.ts) quanto em um AppRoutingModule tradicional, possibilitando comparar os dois estilos.
-
-Principais Recursos do Login
-
-SubmitErrorStateMatcher garante que mensagens de erro só apareçam depois do submit.
-
-Alternância de visibilidade da senha.
-
-Remember e‑mail salvo em localStorage.
-
-Indicador de carregamento (MatProgressSpinner).
-
-Feedback de sucesso/erro com MatSnackBar.
-
-Pré‑requisitos
-
-Node.js ≥ 18
-Angular CLI ≥ 17
-
-git clone https://github.com/Dsaamorim/angular-auth-app.git
-cd angular-auth-app
-npm install
-ng serve -o
-
-Acesse http://localhost:4200 no navegador. O aplicativo recarrega automaticamente a cada alteração de código.
-
-login(email: string, password: string): Observable<{ token: string }>
-
-Ao obter o token o componente armazena‑o em localStorage e redireciona o usuário para /dashboard.
-Substitua a URL do endpoint em auth.service.ts e adapte o payload conforme o seu backend
-
-Testes
-ng test
