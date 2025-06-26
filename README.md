@@ -41,7 +41,6 @@ Este repositório demonstra uma configuração **essencial** para um fluxo de au
 
 ## Estrutura de Pastas
 
-```text```
 src/
  └─ app/
     ├─ app.routes.ts
