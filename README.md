@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1e0ca18771e2ff2283d563f8df225ddde08392da
 # FrontendAuth
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
@@ -63,6 +66,8 @@ For more information on using the Angular CLI, including detailed command refere
 
 ![Login Angular](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angular.gif?raw=true)
 
+![Login Angularll](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angularll.gif?raw=true)
+
 ## Node.js Authentication API
 
 API de autenticação com JWT, MongoDB e validação Zod.
@@ -78,7 +83,78 @@ API de autenticação com JWT, MongoDB e validação Zod.
 
 1. Instale as dependências:
 
-```bash
+```bash```
 npm install
 
+<<<<<<< HEAD
 >>>>>>> 3ea66694c5b523c06efc59988d6a7397d94aab55
+=======
+## Angular Auth App — Configuração Mínima
+
+Este repositório demonstra uma configuração **essencial** para um fluxo de autenticação completo em Angular — com lazy loading, guards e UI em Angular Material.
+
+---
+
+## Visão Geral
+
+- **Rotas** declaradas em `src/app/app.routes.ts` com `loadComponent` e redirecionamentos seguros.  
+- **Login / Registro / Perfil** como componentes independentes.  
+- **Auth Guard** protegendo a rota `/profile`.  
+- **Reactive Forms** com validações e feedback visual amigável.  
+- **LocalStorage** opcional para lembrar o e-mail do usuário.  
+- **UI** estilizada com Angular Material.  
+
+---
+
+## Estrutura de Pastas
+
+```
+src/
+ └─ app/
+    ├─ app.routes.ts
+    ├─ app.component.ts
+    ├─ auth.guard.ts
+    ├─ login/
+    │   ├─ login.component.ts
+    │   ├─ login.component.html
+    │   └─ login.component.scss
+    ├─ register/
+    │   └─ register.component.ts
+    └─ profile/
+        └─ profile.component.ts
+```
+
+Caminho	Componente	Proteção
+/ ou /login	LoginComponent	—
+/register	RegisterComponent	—
+/profile	ProfileComponent	authGuard
+** (inválida)	Redireciona → /login	—
+
+A definição existe tanto em standalone routes (app.routes.ts) quanto em AppRoutingModule tradicional, permitindo comparar estilos.
+
+Principais Recursos do Login
+SubmitErrorStateMatcher → erros visíveis após submit.
+
+Alternância de visibilidade da senha.
+
+Remember e-mail salvo em localStorage.
+
+Indicador de carregamento (MatProgressSpinner).
+
+Feedback de sucesso/erro via MatSnackBar.
+
+Tecnologias Utilizadas
+Angular 17+ com Standalone Components
+
+Angular Router com Lazy Loading
+
+Angular Reactive Forms
+
+Angular Material
+
+RxJS para manipulação de streams
+
+TypeScript
+
+HTML5 & SCSS
+>>>>>>> 1e0ca18771e2ff2283d563f8df225ddde08392da
