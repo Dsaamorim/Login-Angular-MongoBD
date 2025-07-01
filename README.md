@@ -152,3 +152,96 @@ HTML5 & SCSS
 
 ![Login Angularll](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angularll.gif?raw=true)
 
+# 📝 Componente de Registro Angular
+
+![Angular](https://img.shields.io/badge/Angular-16+-red?logo=angular)
+![Material](https://img.shields.io/badge/Material-UI-blue?logo=material-design)
+
+Componente de formulário de registro com validações avançadas, design moderno e responsivo.
+
+## 🎯 Funcionalidades
+
+- ✅ Formulário reativo com validações em tempo real
+- 🔒 Gerenciamento seguro de senhas com toggle de visibilidade
+- 📊 Medidor visual de força da senha
+- 📱 Design responsivo para todos os dispositivos
+- 🛡 Validações de frontend robustas
+- 🔄 Integração com serviços de autenticação
+
+## 🛠 Como Implementar
+
+### Pré-requisitos
+```bash
+Angular 16+
+Angular Material 16+
+
+Passo a Passo
+Copie os arquivos para seu projeto:
+
+register.component.html
+
+register.component.scss
+
+register.component.ts
+
+Adicione os módulos necessários:
+imports: [
+  ReactiveFormsModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatFormFieldModule, 
+  MatInputModule,
+  MatButtonModule
+]
+
+Configure seu serviço de autenticação:
+
+// auth.service.ts
+register(userData: any): Observable<any> {
+  // Sua lógica de registro aqui
+}
+
+🎨 Personalização
+Cores (SCSS)
+scss
+$primary-blue: #5b8def;       // Azul primário
+$primary-cyan: #2fd8fd;       // Ciano para gradientes
+$error-red: #d32f2f;          // Vermelho para erros
+$success-green: #2e7d32;      // Verde para sucesso
+
+Validações
+Campo	Regras
+Nome	3-50 caracteres, apenas letras
+Email	Formato válido, único no sistema
+Senha	8+ chars, maiúsculas, números, etc
+Confirmação	Deve bater com a senha
+
+📱 Responsividade
+scss
+/* Mobile (até 600px) */
+@media (max-width: 600px) {
+  .register-card {
+    padding: 30px 24px;
+    max-width: 90%;
+  }
+}
+
+Métodos Principais
+Método	Descrição
+onSubmit()	Envia o formulário
+togglePasswordVisibility()	Mostra/esconde a senha
+getPasswordStrengthText()	Retorna "Forte", "Fraca", etc
+getNameErrorMessage()	Gera mensagens de erro do nome
+
+💡 Exemplo de Uso
+typescript
+// No seu módulo de rotas:
+{
+  path: 'register',
+  component: RegisterComponent
+}
+
+📌 Dependências
+json
+"@angular/forms": "^16.0.0",
+"@angular/material": "^16.0.0"
