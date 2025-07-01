@@ -180,6 +180,8 @@ Angular Material 16+
 
 Copie os arquivos para seu projeto:
 
+```bash
+
 register.component.html
 register.component.scss
 register.component.ts
