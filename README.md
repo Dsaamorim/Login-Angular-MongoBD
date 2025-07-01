@@ -176,6 +176,7 @@ Angular 16+
 Angular Material 16+
 
 ### Passo a Passo
+```bash
 Copie os arquivos para seu projeto:
 
 register.component.html
@@ -193,6 +194,7 @@ imports: [
 ]
 
 ### Configure seu serviço de autenticação:
+```bash
 
 // auth.service.ts
 register(userData: any): Observable<any> {
@@ -225,6 +227,7 @@ scss
 }
 
 ### Métodos Principais
+```bash
 
 onSubmit()	Envia o formulário
 togglePasswordVisibility()	Mostra/esconde a senha
