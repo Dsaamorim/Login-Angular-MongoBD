@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { AuthService } from '../auth.service';
@@ -15,12 +15,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
 
-// 🔧 Mostra erro apenas após submit (evita erros ao desfocar)
 export class SubmitErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(
-    control: FormControl | null,
-    form: FormGroupDirective | NgForm | null
-  ): boolean {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     return !!(control && control.invalid && form && form.submitted);
   }
 }
@@ -33,23 +29,22 @@ export class SubmitErrorStateMatcher implements ErrorStateMatcher {
   imports: [
     CommonModule,
     ReactiveFormsModule,
-
-    // Angular Material
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule,
     MatCheckboxModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    RouterLink
   ]
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  matcher = new SubmitErrorStateMatcher(); // 🔧 controla quando mostrar erros
+  matcher = new SubmitErrorStateMatcher();
   isLoading = false;
   submitted = false;
-  showPassword = false;
+  hidePassword = true;
   rememberEmail = false;
 
   constructor(
@@ -58,7 +53,6 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private snackBar: MatSnackBar
   ) {
-    // Inicializa o form
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -75,7 +69,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  // Getters para facilitar o acesso no template
   get emailCtrl() {
     return this.loginForm.get('email');
   }
@@ -84,8 +77,14 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password');
   }
 
+  onPasswordInput(event: any): void {
+    // Apenas para garantir que o evento está sendo capturado
+    console.log('Input detected:', event.target.value);
+  }
+
+  // Alterna a visibilidade da senha
   togglePasswordVisibility(): void {
-    this.showPassword = !this.showPassword;
+    this.hidePassword = !this.hidePassword;
   }
 
   toggleRememberEmail(): void {
@@ -112,28 +111,18 @@ export class LoginComponent implements OnInit {
 
     if (this.rememberEmail && email) {
       localStorage.setItem('remembered_email', email);
-    } else {
-      localStorage.removeItem('remembered_email');
     }
 
     this.authService.login(email, password).subscribe({
       next: (res: any) => {
         this.isLoading = false;
-
         if (res.token) {
           localStorage.setItem('token', res.token);
-
           this.snackBar.open('Login realizado com sucesso', 'Fechar', {
             duration: 5000,
             panelClass: ['success-snackbar']
           });
-
           this.router.navigate(['/dashboard']);
-        } else {
-          this.snackBar.open('Resposta inválida do servidor', 'Fechar', {
-            duration: 5000,
-            panelClass: ['error-snackbar']
-          });
         }
       },
       error: (err) => {
@@ -143,7 +132,6 @@ export class LoginComponent implements OnInit {
           duration: 5000,
           panelClass: ['error-snackbar']
         });
-        console.error('Erro no login:', err);
       }
     });
   }

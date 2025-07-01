@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes'; // Ajuste o caminho conforme necessário
 
 /* Angular Material */
 import { MatCardModule } from '@angular/material/card';
@@ -16,6 +18,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { AuthService } from './auth.service';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   // Se estiver usando componentes standalone, NÃO declare aqui
@@ -29,6 +32,7 @@ import { AuthService } from './auth.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    RegisterComponent,
     
     // Angular Material
     MatCardModule,
@@ -37,6 +41,7 @@ import { AuthService } from './auth.service';
     MatFormFieldModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    RouterModule.forRoot(routes)
   ],
   
   providers: [

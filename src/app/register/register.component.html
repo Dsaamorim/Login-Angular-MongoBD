@@ -1,1 +1,116 @@
-<p>register.component works!</p>
+<div class="register-background">
+  <div class="register-card">
+    <!-- Cabeçalho com ícone e título -->
+    <div class="register-header">
+      <mat-icon>person_add</mat-icon>
+      <h1 class="register-title">Registro</h1>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+      <!-- Campo de Nome -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nome completo</mat-label>
+        <input matInput formControlName="name" required maxlength="50">
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-hint>Informe seu nome completo (máx. 50 caracteres)</mat-hint>
+        <mat-error *ngIf="registerForm.get('name')?.invalid">
+          {{ getNameErrorMessage() }}
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Campo de Email -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required type="email" maxlength="100">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-hint>Informe um email válido (máx. 100 caracteres)</mat-hint>
+        <mat-error *ngIf="registerForm.get('email')?.invalid">
+          {{ getEmailErrorMessage() }}
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Campo de Senha -->
+      <div class="password-container">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Senha</mat-label>
+          <input
+            matInput
+            [type]="hidePassword ? 'password' : 'text'"
+            formControlName="password"
+            (input)="onPasswordInput()"
+            #passwordInput
+            required
+          />
+          <button
+            mat-icon-button
+            type="button"
+            (click)="togglePasswordVisibility()"
+            class="custom-toggle"
+            [class.visible]="passwordInput.value"
+          >
+            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-hint>
+            <div class="password-strength-meter">
+              <span>Força da senha: </span>
+              <span class="strength-bar">
+                <span class="bar" [class.active]="passwordStrength >= 1"></span>
+                <span class="bar" [class.active]="passwordStrength >= 2"></span>
+                <span class="bar" [class.active]="passwordStrength >= 3"></span>
+                <span class="bar" [class.active]="passwordStrength >= 4"></span>
+              </span>
+              <span class="strength-text">
+                {{ getPasswordStrengthText() }}
+              </span>
+            </div>
+          </mat-hint>
+          <mat-error *ngIf="registerForm.get('password')?.invalid">
+            {{ getPasswordErrorMessage() }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Campo de Confirmar Senha -->
+      <div class="password-container">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Confirmar Senha</mat-label>
+          <input
+            matInput
+            [type]="hideConfirmPassword ? 'password' : 'text'"
+            formControlName="confirmPassword"
+            #confirmPasswordInput
+            required
+          />
+          <button
+            mat-icon-button
+            type="button"
+            (click)="toggleConfirmPasswordVisibility()"
+            class="custom-toggle"
+            [class.visible]="confirmPasswordInput.value"
+          >
+            <mat-icon>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="registerForm.get('confirmPassword')?.invalid || registerForm.hasError('passwordMismatch')">
+            {{ getConfirmPasswordErrorMessage() }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Botão de Registro -->
+      <button 
+        mat-raised-button 
+        class="register-button"
+        type="submit"
+        [disabled]="registerForm.invalid || isLoading">
+        <span *ngIf="!isLoading">Registrar</span>
+        <mat-spinner *ngIf="isLoading" diameter="24"></mat-spinner>
+      </button>
+
+      <!-- Link para login -->
+      <div class="login-link">
+        Já tem conta?
+        <a routerLink="/login">Faça login</a>
+      </div>
+    </form>
+  </div>
+</div>
