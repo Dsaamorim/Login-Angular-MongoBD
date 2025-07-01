@@ -150,5 +150,5 @@ TypeScript
 
 HTML5 & SCSS
 
-![Login Angularll](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angularll.gif?raw=true)
+![Login Angularll](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angularll.mp4?raw=true)
 
