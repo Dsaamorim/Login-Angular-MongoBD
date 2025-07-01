@@ -87,11 +87,11 @@ Este repositório demonstra uma configuração essencial para um fluxo de autent
 ## Visão Geral
 ```bash
 - Rotas declaradas em `src/app/app.routes.ts` com `loadComponent` e redirecionamentos seguros.  
-- **Login / Registro / Perfil** como componentes independentes.  
-- **Auth Guard** protegendo a rota `/profile`.  
-- **Reactive Forms** com validações e feedback visual amigável.  
-- **LocalStorage** opcional para lembrar o e-mail do usuário.  
-- **UI** estilizada com Angular Material.  
+- Login / Registro / Perfil como componentes independentes.  
+- Auth Guard protegendo a rota `/profile`.  
+- Reactive Forms com validações e feedback visual amigável.  
+- LocalStorage opcional para lembrar o e-mail do usuário.  
+- UI estilizada com Angular Material.  
 ```
 ## Estrutura de Pastas
 ```bash
