@@ -81,4 +81,3 @@ API de autenticação com JWT, MongoDB e validação Zod.
 ```bash
 npm install
 
->>>>>>> 3ea66694c5b523c06efc59988d6a7397d94aab55
