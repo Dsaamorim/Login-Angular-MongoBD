@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1e0ca18771e2ff2283d563f8df225ddde08392da
 # FrontendAuth
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
