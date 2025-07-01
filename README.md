@@ -150,12 +150,13 @@ HTML5 & SCSS
 ![Login Angularll](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angularll.gif?raw=true)
 
 # 📝 Componente de Registro Angular
+```bash
 
 ![Angular](https://img.shields.io/badge/Angular-16+-red?logo=angular)
 ![Material](https://img.shields.io/badge/Material-UI-blue?logo=material-design)
 
 Componente de formulário de registro com validações avançadas, design moderno e responsivo.
-
+```
 ## 🎯 Funcionalidades
 
 - ✅ Formulário reativo com validações em tempo real
