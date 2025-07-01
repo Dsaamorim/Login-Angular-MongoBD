@@ -82,8 +82,6 @@ API de autenticação com JWT, MongoDB e validação Zod.
 ```bash```
 npm install
 
-<<<<<<< HEAD
->>>>>>> 3ea66694c5b523c06efc59988d6a7397d94aab55
 =======
 ## Angular Auth App — Configuração Mínima
 
