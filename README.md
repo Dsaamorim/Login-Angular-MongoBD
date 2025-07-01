@@ -203,7 +203,7 @@ register(userData: any): Observable<any> {
 }
 ```
 ###🎨 Personalização
-```
+```bash
 Cores (SCSS)
 scss
 $primary-blue: #5b8def;       // Azul primário
@@ -212,14 +212,17 @@ $error-red: #d32f2f;          // Vermelho para erros
 $success-green: #2e7d32;      // Verde para sucesso
 ```
 
-Validações
+###Validações
+```bash
 Campo	Regras
 Nome	3-50 caracteres, apenas letras
 Email	Formato válido, único no sistema
 Senha	8+ chars, maiúsculas, números, etc
 Confirmação	Deve bater com a senha
+```
 
-📱 Responsividade
+###📱 Responsividade
+```bash
 scss
 /* Mobile (até 600px) */
 @media (max-width: 600px) {
@@ -228,21 +231,25 @@ scss
     max-width: 90%;
   }
 }
+```
 
 ### Métodos Principais
-```
+```bash
 onSubmit() -> Envia o formulário
 togglePasswordVisibility() -> Mostra/esconde a senha
 getPasswordStrengthText() -> Retorna "Forte", "Fraca", etc
 getNameErrorMessage() -> Gera mensagens de erro do nome
+```
 
-💡 Exemplo de Uso
+###💡 Exemplo de Uso
+```bash
 typescript
 // No seu módulo de rotas:
 {
   path: 'register',
   component: RegisterComponent
 }
+```
 
 📌 Dependências
 json
