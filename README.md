@@ -153,4 +153,3 @@ RxJS para manipulação de streams
 TypeScript
 
 HTML5 & SCSS
->>>>>>> 1e0ca18771e2ff2283d563f8df225ddde08392da
