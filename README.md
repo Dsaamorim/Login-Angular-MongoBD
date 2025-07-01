@@ -79,12 +79,12 @@ API de autenticação com JWT, MongoDB e validação Zod.
 
 ```bash```
 npm install
-
+```
 =======
 ## Angular Auth App — Configuração Mínima
-
+```bash```
 Este repositório demonstra uma configuração **essencial** para um fluxo de autenticação completo em Angular — com lazy loading, guards e UI em Angular Material.
-
+```
 ---
 
 ## Visão Geral
@@ -116,11 +116,13 @@ src/
         └─ profile.component.ts
 ```
 
-Caminho	Componente	Proteção
+```bash```
+## Caminho	Componente Rota Protegida
 / ou /login	LoginComponent	—
 /register	RegisterComponent	—
 /profile	ProfileComponent	authGuard
 ** (inválida)	Redireciona → /login	—
+```
 
 A definição existe tanto em standalone routes (app.routes.ts) quanto em AppRoutingModule tradicional, permitindo comparar estilos.
 
