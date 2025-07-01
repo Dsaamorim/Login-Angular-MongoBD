@@ -228,7 +228,7 @@ scss
 }
 
 ### Métodos Principais
-
+```
 onSubmit() -> Envia o formulário
 togglePasswordVisibility() -> Mostra/esconde a senha
 getPasswordStrengthText() -> Retorna "Forte", "Fraca", etc
