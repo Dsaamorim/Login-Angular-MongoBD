@@ -62,7 +62,7 @@ For more information on using the Angular CLI, including detailed command refere
 ## Demonstração
 
 ![Login Angular](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angular.gif?raw=true)
-
+![Login Angularll](https://github.com/Dsaamorim/Login-Angular-MongoBD/blob/main/Login-Angularll.gif?raw=true)
 ## Node.js Authentication API
 
 API de autenticação com JWT, MongoDB e validação Zod.
