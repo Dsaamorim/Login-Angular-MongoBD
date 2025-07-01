@@ -158,14 +158,14 @@ HTML5 & SCSS
 Componente de formulário de registro com validações avançadas, design moderno e responsivo.
 ```
 ## 🎯 Funcionalidades
-
+```bash
 - ✅ Formulário reativo com validações em tempo real
 - 🔒 Gerenciamento seguro de senhas com toggle de visibilidade
 - 📊 Medidor visual de força da senha
 - 📱 Design responsivo para todos os dispositivos
 - 🛡 Validações de frontend robustas
 - 🔄 Integração com serviços de autenticação
-
+```
 ## 🛠 Como Implementar
 
 ### Pré-requisitos
