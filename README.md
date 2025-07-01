@@ -175,13 +175,11 @@ Componente de formulário de registro com validações avançadas, design modern
 Angular 16+
 Angular Material 16+
 
-Passo a Passo
+### Passo a Passo
 Copie os arquivos para seu projeto:
 
 register.component.html
-
 register.component.scss
-
 register.component.ts
 
 Adicione os módulos necessários:
@@ -194,7 +192,7 @@ imports: [
   MatButtonModule
 ]
 
-Configure seu serviço de autenticação:
+### Configure seu serviço de autenticação:
 
 // auth.service.ts
 register(userData: any): Observable<any> {
@@ -226,8 +224,8 @@ scss
   }
 }
 
-Métodos Principais
-Método	Descrição
+### Métodos Principais
+
 onSubmit()	Envia o formulário
 togglePasswordVisibility()	Mostra/esconde a senha
 getPasswordStrengthText()	Retorna "Forte", "Fraca", etc
