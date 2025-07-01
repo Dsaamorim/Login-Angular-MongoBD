@@ -202,7 +202,7 @@ register(userData: any): Observable<any> {
   // Sua lógica de registro aqui
 }
 ```
-###🎨 Personalização
+### 🎨 Personalização
 ```bash
 Cores (SCSS)
 scss
@@ -212,7 +212,7 @@ $error-red: #d32f2f;          // Vermelho para erros
 $success-green: #2e7d32;      // Verde para sucesso
 ```
 
-###Validações
+### Validações
 ```bash
 Campo	Regras
 Nome	3-50 caracteres, apenas letras
@@ -221,7 +221,7 @@ Senha	8+ chars, maiúsculas, números, etc
 Confirmação	Deve bater com a senha
 ```
 
-###📱 Responsividade
+### 📱 Responsividade
 ```bash
 scss
 /* Mobile (até 600px) */
@@ -241,7 +241,7 @@ getPasswordStrengthText() -> Retorna "Forte", "Fraca", etc
 getNameErrorMessage() -> Gera mensagens de erro do nome
 ```
 
-###💡 Exemplo de Uso
+### 💡 Exemplo de Uso
 ```bash
 typescript
 // No seu módulo de rotas:
@@ -251,7 +251,9 @@ typescript
 }
 ```
 
-📌 Dependências
+### 📌 Dependências
+```bash
 json
 "@angular/forms": "^16.0.0",
 "@angular/material": "^16.0.0"
+```
