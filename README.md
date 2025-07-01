@@ -175,8 +175,9 @@ Componente de formulário de registro com validações avançadas, design modern
 Angular 16+
 Angular Material 16+
 
+```
 ### Passo a Passo
-```bash
+
 Copie os arquivos para seu projeto:
 
 register.component.html
@@ -226,6 +227,7 @@ scss
   }
 }
 
+```
 ### Métodos Principais
 ```bash
 
