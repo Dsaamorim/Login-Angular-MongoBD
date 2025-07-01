@@ -112,7 +112,7 @@ src/
 ```
 
 ## Caminho Componente Rota Protegida
-```bash```
+```bash
 / ou /login	LoginComponent	—
 /register	RegisterComponent	—
 /profile	ProfileComponent	authGuard
