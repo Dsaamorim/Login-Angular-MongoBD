@@ -180,8 +180,6 @@ Angular Material 16+
 
 Copie os arquivos para seu projeto:
 
-```bash
-
 register.component.html
 register.component.scss
 register.component.ts
@@ -197,7 +195,6 @@ imports: [
 ]
 
 ### Configure seu serviço de autenticação:
-```bash
 
 // auth.service.ts
 register(userData: any): Observable<any> {
@@ -229,14 +226,12 @@ scss
   }
 }
 
-```
 ### Métodos Principais
-```bash
 
-onSubmit()	Envia o formulário
-togglePasswordVisibility()	Mostra/esconde a senha
-getPasswordStrengthText()	Retorna "Forte", "Fraca", etc
-getNameErrorMessage()	Gera mensagens de erro do nome
+onSubmit() -> Envia o formulário
+togglePasswordVisibility() -> Mostra/esconde a senha
+getPasswordStrengthText() -> Retorna "Forte", "Fraca", etc
+getNameErrorMessage() -> Gera mensagens de erro do nome
 
 💡 Exemplo de Uso
 typescript
