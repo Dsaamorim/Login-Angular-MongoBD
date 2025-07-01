@@ -196,19 +196,20 @@ imports: [
 
 ```
 ### Configure seu serviço de autenticação:
-
 // auth.service.ts
 register(userData: any): Observable<any> {
   // Sua lógica de registro aqui
 }
-
-🎨 Personalização
+```
+###🎨 Personalização
+```bash
 Cores (SCSS)
 scss
 $primary-blue: #5b8def;       // Azul primário
 $primary-cyan: #2fd8fd;       // Ciano para gradientes
 $error-red: #d32f2f;          // Vermelho para erros
 $success-green: #2e7d32;      // Verde para sucesso
+```
 
 Validações
 Campo	Regras
