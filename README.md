@@ -177,7 +177,7 @@ Angular Material 16+
 
 ```
 ### Passo a Passo
-
+```bash
 Copie os arquivos para seu projeto:
 
 register.component.html
@@ -194,6 +194,7 @@ imports: [
   MatButtonModule
 ]
 
+```
 ### Configure seu serviço de autenticação:
 
 // auth.service.ts
