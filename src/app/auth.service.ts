@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError, Observable } from 'rxjs';
+import { AuthResponse } from './models/auth-response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +12,26 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.API_URL}/login`, { email, password }).pipe(
-      catchError(this.handleError)
-    );
+  // login(email: string, password: string): Observable<any> {
+  //   return this.http.post(`${this.API_URL}/login`, { email, password }).pipe(
+  //     catchError(this.handleError)
+  //   );
+  // }
+
+  login(email: string, password: string): Observable<AuthResponse> {
+  return this.http
+    .post<AuthResponse>(`${this.API_URL}/login`, { email, password })
+    .pipe(catchError(this.handleError));
   }
 
-  register(userData: { name: string; email: string; password: string }): Observable<any> {
-    return this.http.post(`${this.API_URL}/register`, userData);
+  // register(userData: { name: string; email: string; password: string }): Observable<any> {
+  //   return this.http.post(`${this.API_URL}/register`, userData);
+  // }
+
+  register(userData: { name: string; email: string; password: string }): Observable<AuthResponse> {
+  return this.http
+    .post<AuthResponse>(`${this.API_URL}/register`, userData)
+    .pipe(catchError(this.handleError));
   }
 
   getProfile() {
