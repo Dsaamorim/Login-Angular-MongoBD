@@ -4,8 +4,6 @@ import { Router, RouterLink } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { AuthService } from '../auth.service';
-
-// Angular Material Modules
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -78,11 +76,9 @@ export class LoginComponent implements OnInit {
   }
 
   onPasswordInput(event: any): void {
-    // Apenas para garantir que o evento está sendo capturado
     console.log('Input detected:', event.target.value);
   }
 
-  // Alterna a visibilidade da senha
   togglePasswordVisibility(): void {
     this.hidePassword = !this.hidePassword;
   }

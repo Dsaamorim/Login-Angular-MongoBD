@@ -6,11 +6,9 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,  // Substitui BrowserModule
-    RouterOutlet,  // Para <router-outlet>
-    // Adicione outros componentes/diretivas necessárias aqui
+    CommonModule,
+    RouterOutlet,
   ],
   template: '<router-outlet></router-outlet>',
-  // Remova styleUrls se não estiver usando
 })
 export class AppComponent {}

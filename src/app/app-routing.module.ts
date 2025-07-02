@@ -3,19 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
-import { authGuard } from './auth.guard'; // Verifique se é export const ou export class
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redireciona raiz para login
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { 
     path: 'profile', 
     component: ProfileComponent, 
-    canActivate: [authGuard] // Verifique a implementação do guard
+    canActivate: [authGuard] 
   },
-  // Rota de fallback (opcional)
-  { path: '**', redirectTo: 'login' } // Captura rotas inexistentes
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({

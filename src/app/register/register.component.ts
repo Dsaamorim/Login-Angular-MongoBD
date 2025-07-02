@@ -4,15 +4,12 @@ import { Router, RouterLink } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../auth.service';
 import { CommonModule } from '@angular/common';
-
-/* Angular Material Components */
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
-// Validador personalizado para verificar se as senhas coincidem
 export function passwordMatchValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const password = control.get('password')?.value;
@@ -24,7 +21,6 @@ export function passwordMatchValidator(): ValidatorFn {
   };
 }
 
-// Validador personalizado para força da senha
 export function passwordStrengthValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const value = control.value;
@@ -53,8 +49,6 @@ export function passwordStrengthValidator(): ValidatorFn {
     CommonModule,
     ReactiveFormsModule,
     RouterLink,
-    
-    // Angular Material Modules
     MatIconModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
@@ -96,12 +90,10 @@ export class RegisterComponent {
     }, { validators: passwordMatchValidator() });
   }
 
-  // Getters para acessar os controles do formulário facilmente
   get f() {
     return this.registerForm.controls;
   }
 
-  // Atualiza a força da senha enquanto o usuário digita
   onPasswordInput() {
     const password = this.registerForm.get('password')?.value;
     if (!password) {
@@ -111,11 +103,8 @@ export class RegisterComponent {
 
     let strength = 0;
     
-    // Verifica o comprimento
     if (password.length >= 8) strength++;
     if (password.length >= 12) strength++;
-    
-    // Verifica caracteres diversos
     if (/[A-Z]/.test(password)) strength++;
     if (/[a-z]/.test(password)) strength++;
     if (/[0-9]/.test(password)) strength++;
@@ -124,7 +113,6 @@ export class RegisterComponent {
     this.passwordStrength = Math.min(Math.floor(strength / 2), 4);
   }
 
-  // Retorna o texto descritivo da força da senha
   getPasswordStrengthText(): string {
     switch (this.passwordStrength) {
       case 0: return 'Muito fraca';
@@ -136,17 +124,14 @@ export class RegisterComponent {
     }
   }
 
-  // Alterna a visibilidade da senha
   togglePasswordVisibility() {
     this.hidePassword = !this.hidePassword;
   }
 
-  // Alterna a visibilidade da confirmação de senha
   toggleConfirmPasswordVisibility() {
     this.hideConfirmPassword = !this.hideConfirmPassword;
   }
 
-  // Envia o formulário
   onSubmit(): void {
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
@@ -180,7 +165,6 @@ export class RegisterComponent {
     });
   }
 
-  // Retorna mensagens de erro para o campo de nome
   getNameErrorMessage() {
     const nameControl = this.registerForm.get('name');
     
@@ -203,7 +187,6 @@ export class RegisterComponent {
     return '';
   }
 
-  // Retorna mensagens de erro para o campo de email
   getEmailErrorMessage() {
     const emailControl = this.registerForm.get('email');
     
@@ -226,7 +209,6 @@ export class RegisterComponent {
     return '';
   }
 
-  // Retorna mensagens de erro para o campo de senha
   getPasswordErrorMessage() {
     const passwordControl = this.registerForm.get('password');
     
@@ -245,7 +227,6 @@ export class RegisterComponent {
     return '';
   }
 
-  // Retorna mensagens de erro para o campo de confirmação de senha
   getConfirmPasswordErrorMessage() {
     const confirmControl = this.registerForm.get('confirmPassword');
     const passwordControl = this.registerForm.get('password');

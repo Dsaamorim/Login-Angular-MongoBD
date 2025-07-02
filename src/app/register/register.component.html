@@ -1,13 +1,11 @@
 <div class="register-background">
   <div class="register-card">
-    <!-- Cabeçalho com ícone e título -->
     <div class="register-header">
       <mat-icon>person_add</mat-icon>
       <h1 class="register-title">Registro</h1>
     </div>
 
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
-      <!-- Campo de Nome -->
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nome completo</mat-label>
         <input matInput formControlName="name" required maxlength="50">
@@ -17,8 +15,6 @@
           {{ getNameErrorMessage() }}
         </mat-error>
       </mat-form-field>
-
-      <!-- Campo de Email -->
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" required type="email" maxlength="100">
@@ -28,8 +24,6 @@
           {{ getEmailErrorMessage() }}
         </mat-error>
       </mat-form-field>
-
-      <!-- Campo de Senha -->
       <div class="password-container">
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Senha</mat-label>
@@ -69,8 +63,6 @@
           </mat-error>
         </mat-form-field>
       </div>
-
-      <!-- Campo de Confirmar Senha -->
       <div class="password-container">
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Confirmar Senha</mat-label>
@@ -95,8 +87,6 @@
           </mat-error>
         </mat-form-field>
       </div>
-
-      <!-- Botão de Registro -->
       <button 
         mat-raised-button 
         class="register-button"
@@ -105,8 +95,6 @@
         <span *ngIf="!isLoading">Registrar</span>
         <mat-spinner *ngIf="isLoading" diameter="24"></mat-spinner>
       </button>
-
-      <!-- Link para login -->
       <div class="login-link">
         Já tem conta?
         <a routerLink="/login">Faça login</a>

@@ -1,4 +1,3 @@
-/* ============== VARIÁVEIS ============== */
 $primary-blue: #5b8def;
 $primary-cyan: #2fd8fd;
 $text-dark: #0d1b3a;
@@ -9,7 +8,6 @@ $card-bg: rgba(255, 255, 255, 0.85);
 $card-border: rgba(255, 255, 255, 0.3);
 $hint-color: rgba(13, 27, 58, 0.6);
 
-/* ============== ESTILOS GERAIS ============== */
 :host {
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
@@ -24,7 +22,6 @@ $hint-color: rgba(13, 27, 58, 0.6);
   box-sizing: border-box;
 }
 
-/* ============== CARD DE LOGIN ============== */
 .login-card {
   width: 100%;
   max-width: 500px;
@@ -42,7 +39,6 @@ $hint-color: rgba(13, 27, 58, 0.6);
   }
 }
 
-/* ============== CABEÇALHO ============== */
 .login-header {
   margin-bottom: 28px;
   text-align: center;
@@ -66,64 +62,57 @@ $hint-color: rgba(13, 27, 58, 0.6);
   }
 }
 
-/* ============== FORMULÁRIO ============== */
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem; /* Aumentado */
+  gap: 1.75rem; 
   mat-form-field {
     width: 100%;
-    margin-bottom: 1rem; /* Aumentado */
+    margin-bottom: 1rem;
 
-    /* Aumenta a área do input */
     .mat-mdc-text-field-wrapper {
-      padding: 8px 16px; /* Mais espaçamento interno */
-      border-radius: 14px; /* Bordas mais arredondadas */
+      padding: 8px 16px; 
+      border-radius: 14px; 
     }
 
-    /* Aumenta a altura do campo */
     .mat-mdc-form-field-infix {
-      min-height: 100px; /* Altura aumentada */
+      min-height: 100px;
       padding: 1rem 0 !important;
     }
 
-    /* Texto maior */
     .mat-mdc-input-element {
-      font-size: 1.25rem; /* Fonte aumentada */
+      font-size: 1.25rem; 
       height: 30px;
-      padding: 0.5rem 0; /* Adicionado */
+      padding: 0.5rem 0; 
     }
 
-    /* Label maior */
     .mdc-floating-label {
-      font-size: 1.25rem; /* Tamanho da label aumentado */
+      font-size: 1.25rem; 
       top: 28px;
     }
   }
 }
 
-/* AJUSTE DO ÍCONE DE SENHA PARA CAMPO MAIOR */
 .password-container {
   .custom-toggle {
-    right: 16px; /* Posição ajustada */
-    width: 44px; /* Tamanho aumentado */
+    right: 16px; 
+    width: 44px; 
     height: 44px;
     
     .mat-icon {
-      font-size: 22px; /* Ícone maior */
+      font-size: 22px; 
     }
   }
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 600px) {
   .login-card {
-    padding: 30px; /* Reduz padding em mobile */
+    padding: 30px; 
     max-width: 90%;
   }
   
   .login-form mat-form-field .mat-mdc-form-field-infix {
-    min-height: 56px; /* Altura ligeiramente menor em mobile */
+    min-height: 56px;
   }
 }
 
@@ -131,7 +120,6 @@ $hint-color: rgba(13, 27, 58, 0.6);
   width: 100%;
 }
 
-/* ============== CAMPOS DO FORMULÁRIO ============== */
 mat-form-field {
   margin-bottom: 10px;
 
@@ -158,11 +146,8 @@ mat-form-field {
   }
 }
 
-/* ============== SOLUÇÃO PARA ÍCONE DE SENHA ============== */
 .password-container {
   position: relative;
-
-  /* Remove o ícone padrão do Angular Material */
   ::ng-deep .mat-mdc-form-field-icon-suffix {
     display: none !important;
   }
@@ -201,14 +186,12 @@ mat-form-field {
   }
 }
 
-/* ============== MENSAGENS DE ERRO ============== */
 mat-error {
   font-size: 0.8rem;
   margin-top: 4px;
   color: $error-red;
 }
 
-/* ============== CHECKBOX LEMBRAR EMAIL ============== */
 .remember-email {
   margin-top: -8px;
 
@@ -218,7 +201,6 @@ mat-error {
   }
 }
 
-/* ============== BOTÃO DE LOGIN ============== */
 .login-button {
   height: 46px;
   font-weight: 600;
@@ -247,7 +229,6 @@ mat-error {
   }
 }
 
-/* ============== LINK PARA REGISTRO ============== */
 .register-link {
   margin-top: 24px;
   text-align: center;
@@ -284,7 +265,6 @@ mat-error {
   }
 }
 
-/* ============== SNACKBAR ============== */
 .success-snackbar {
   --mdc-snackbar-container-color: #{$success-green};
   --mdc-snackbar-supporting-text-color: #fff;
@@ -295,7 +275,6 @@ mat-error {
   --mdc-snackbar-supporting-text-color: #fff;
 }
 
-/* ============== RESPONSIVIDADE ============== */
 @media (max-width: 600px) {
   .login-card {
     padding: 30px 24px;
@@ -313,7 +292,6 @@ mat-error {
   }
 }
 
-/* ============== REMOÇÃO DE ÍCONES NATIVOS ============== */
 input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
   display: none;
